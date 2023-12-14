@@ -182,7 +182,7 @@
 						<h1>Alwani & Wulan</h1>
 						<p style="margin-bottom: 0">Kepada Bapak/Ibu/Saudara/i</p>
 						<p>Kami Mengundang Anda Untuk Hadir Di Acara Pernikahan Kami.</p>
-
+						<div id="nama-tamu"></div>
 						<button class="btn btn-primary" id="open-invitation">Buka Undangan</button>
 					</div>
 				</div>
@@ -770,7 +770,41 @@ a.n Wulan Purnama Sari</p>
 	// Since we are using dynamic mode, we need to programmatically open lightGallery
 	inlineGallery.openGallery();
 </script>
+<script>
+	const escapeHtml = (unsafe) => {
+		return unsafe
+				.replace(/&/g, '&amp;')
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;')
+				.replace(/"/g, '&quot;')
+				.replace(/'/g, '&#039;');
+};
+const tamu = () => {
+		// Mendapatkan URL saat ini
+		var currentUrl = window.location.href;
 
+		// Membuat objek URL dari URL saat ini
+		var url = new URL(currentUrl);
+
+		// Mendapatkan nilai parameter "name"
+		var name = url.searchParams.get("name");
+		var s = url.searchParams.get("s");
+
+		console.log(name);
+
+		let div = document.createElement('div');
+		div.classList.add('m-2');
+		div.innerHTML = `<p style="margin-bottom: 0" >Kepada Yth ${s}:</p><h3 style="color:white; font-size:34px">${escapeHtml(name)}</h2>`;
+		console.log(name);
+		document.getElementById('nama-tamu').appendChild(div);
+};
+document.addEventListener('DOMContentLoaded', () => {
+console.log("DOMContentLoaded event fired");
+tamu();
+});
+
+
+</script>
 </body>
 </html>
 
