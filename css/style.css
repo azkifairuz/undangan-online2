@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -493,8 +493,8 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #overlay {
   background: #ffffff;
-  background-image: url("../images/overlay.JPG");
-  background-size: cover;
+  background-image: url("../images/overlay.png");
+  /* background-size: cover; */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -503,12 +503,12 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 2000;
 }
 #overlay .content {
-  background: rgba(0, 0, 0, 0.7);
-  position: relative;
+  /* background: rgba(0, 0, 0, 0.7); */
+  position: absolute;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   z-index: 2001;
-  top: 0;
+  top: 400px;
 }
 #overlay .content .container {
   padding-top: 80px;
@@ -521,19 +521,54 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: normal;
-  color: #0298d4;
+  color: #113468;
   font-family: "Satisfy", Arial, serif;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 720px) {
   #overlay .content h1 {
     font-size: 38px;
+  }
+  #overlay {
+    background: #ffffff;
+    background-image: url("../images/overlay.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  #overlay .content h1 {
+    font-size: 48px;
+    font-weight: normal;
+    color: #113468;
+    font-family: "Satisfy", Arial, serif;
+    text-align: left;
+    margin-top: -25px;
+  }
+  #overlay .content h3 {
+    font-size: 48px;
+    font-weight: normal;
+    color: #113468;
+    font-family: "Satisfy", Arial, serif;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  #overlay .content p{
+    color: #113468;
+    text-align: left;
+  }
+  .kami{
+    margin-top: -20px;
   }
 }
 #overlay .content .fh5co-heading {
   margin-bottom: 10px;
 }
 #overlay .content p {
-  color: #ffffff;
+  color: #113468;
+  /* text-align: left; */
 }
 
 .hide-overlay {

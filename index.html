@@ -174,14 +174,16 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box fadeInUp animated-fast">
-						<img src="images/gallery/3.jpg" alt="" class="couple-main" style="border-radius: 50%;">
+						<!-- <img src="images/gallery/3.jpg" alt="" class="couple-main" style="border-radius: 50%;"> -->
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+						<p>The Wedding Of</p>
 						<h1>Alwani & Wulan</h1>
-						<div id="nama-tamu"></div>
-						<p>Kami Mengundang Anda Untuk Hadir Di Acara Pernikahan Kami.</p>
+						<div class="kami" id="nama-tamu"></div>
+						<p class="kami">Kami Mengundang Anda Untuk Hadir Di Acara Pernikahan Kami.</p>
+						<!-- <button class="btn btn-primary" id="open-invitation">Buka Undangan</button> -->
 						<button class="btn btn-primary" id="open-invitation">Buka Undangan</button>
 					</div>
 				</div>
@@ -793,7 +795,7 @@ const tamu = () => {
 
 		let div = document.createElement('div');
 		div.classList.add('m-2');
-		div.innerHTML = `<p style="margin-bottom: 0" >Kepada Yth ${s}:</p><h3 style="color:white; font-size:34px">${escapeHtml(name)}</h2>`;
+		div.innerHTML = `<p class="kami" >Kepada Yth ${s}:</p><h3 class="kami">${escapeHtml(name)}</h2>`;
 		console.log(name);
 		document.getElementById('nama-tamu').appendChild(div);
 };
